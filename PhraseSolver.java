@@ -1,10 +1,10 @@
-/*
- * Activity 2.5.2
- *
- *  The PhraseSolver class the PhraseSolverGame
- */
+
 import java.util.Scanner;
-  
+  /** PhraseSolver, solves phrases, gets solutions from players to do so
+  * @author Peyton Leonard, PLTW
+  * @version 1.1
+  * @date 10/30/23
+  */
 public class PhraseSolver
 {
   /* your code here - attributes */
@@ -13,6 +13,12 @@ public class PhraseSolver
   private Board display;
   private boolean solved;
   /* your code here - constructor(s) */ 
+  /** Default constructor of PhraseSolver class
+  *  Precondition:
+  *    none
+  *  Postcondition:
+  *    newly populated object
+  */
   public PhraseSolver(){
     player1 = new Player();
     player2 = new Player();
@@ -22,7 +28,15 @@ public class PhraseSolver
   /* your code here - accessor(s) */
   
   /* your code here - mutator(s)  */
-
+  /**  
+  * play(): The main process of the game, where players take turns inputting guesses
+  * @see Board.java
+  * 
+  * Precondition:
+  *  None
+  * Postcondition:
+  *  None
+  */
   public void play()
   {
     boolean solved = false;

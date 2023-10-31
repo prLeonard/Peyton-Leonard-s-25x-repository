@@ -1,11 +1,13 @@
-/*
- * Activity 2.5.2
- *
- * A Board class the PhraseSolverGame
- */
+
 import java.util.Scanner;
 import java.io.File;
-
+/** Board, represents a game board handling a hangman type game, uses various methods to allow a user to guess attempt to solve a provided phrase
+ * 
+ * @author Peyton Leonard, PLTW
+ * @version 1.1
+ * @date 10/30/23
+ * 
+ */
 public class  Board
 {
   private String solvedPhrase;
@@ -13,6 +15,8 @@ public class  Board
   private int currentLetterValue; 
   
   /* your code here - constructor(s) */ 
+  /* Constructor of Board class
+  **/
   public Board(){
     solvedPhrase = "";
     phrase = loadPhrase();
@@ -25,12 +29,31 @@ public class  Board
 
 
   /* ---------- provided code, do not modify ---------- */
+  /* Sets currentLetterValue to a randomly generated integer
+  *
+  * @see getLetterVal
+  * Precondition:
+  *  None
+  * Postcondition
+  *  None
+  */
   public void setLetterValue()
   {
     int randomInt = (int) ((Math.random() * 10) + 1) * 100;    
     currentLetterValue = randomInt;
   }
-
+  /** Checks if the guess completes the phrase
+  *
+  *  @param guess    User inputted guess string
+  *  @return boolean condition
+  *  @see guessLetter()
+  *  
+  *  Precondition:
+  *    guess is nonzero in length
+  *  Postcondition:
+  *    Always a boolean value
+  *    No modifications
+  */
   public boolean isSolved(String guess)
   {
     if (phrase.equals(guess))
@@ -39,7 +62,21 @@ public class  Board
     }
     return false;
   }
-
+  /** Fetches a random phrase from the phrases.txt file
+    *
+    *  @return String tempPhrase assigned to class attribute
+    *  @see guessLetter()
+    *  @throws File parse console output
+    *  
+    *  Precondition:
+    *    file.txt has text
+    *  Postcondition:
+    *    Always a String
+    *    Assigned to class attribute
+    *    Contains spaces
+    *    Always lowercase
+    *    Assigns solvedPhrase to be a string of entirely underscores and spaces based on the length of the randomly selected phrase. It should also be noted that each underscore is separated by a space, and thus every word is separated by 3 spaces.
+    */
   private String loadPhrase()
   {
     String tempPhrase = "";
@@ -86,25 +123,44 @@ public class  Board
     
     return tempPhrase;
   }  
-
+  /** Updates the solvedPhrase string based on the guess input
+  * @param guess Single letter user inputted guess of a certain letter in phrase
+  * @return      Updated solvedPhrase with appropriate underscores replaced by guess
+  * @see         Board
+  * Precondition: 
+  *  guess is one letter
+  * Postcondition:
+  *  Boolean
+  *  solvedPhrase contains underscores and spaces for each letter
+  */
   public boolean guessLetter(String guess)
   {
+    //Initialize certain values
     boolean foundLetter = false;
     String newSolvedPhrase = "";
-    
+    //Iterates over all characters in phrase
     for (int i = 0; i < phrase.length(); i++)
     {
+      //compares each letter to the guess argument
       if (phrase.substring(i, i + 1).equals(guess))
       {
+        //Adds guess to newSolvedPhrase with a space, then updates
         newSolvedPhrase += guess + " ";
         foundLetter = true;
       }
       else
       {
+        // copies underscore over with an extra space
         newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";  
+        //end of condition
       }
+    //end of loop  
     }
+    //updates the solved phrase attribute and returns foundLetter
     solvedPhrase = newSolvedPhrase;
     return foundLetter;
   } 
+  public String getPhrase(){/*not yet implemented*/ return "";}
+  public int getLetterVal(){/*not yet implemented*/ return 0;}
+  public void solve(String s){/*not yet implemented*/}
 } 
