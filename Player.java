@@ -30,9 +30,28 @@ public class Player
     score = 0;
     System.out.println("Hello and welcome to the game, " + name);
   }
-  
-  public int getPoints(){/*not yet implemented*/ return "";}
-  public String getName(){/*not yet implemented*/ return 0;}
+  /** Returns the value of points of the object its called on
+  * @return int points: value of points
+  * @see Player
+  * 
+  * Precondition:
+  *  points is occupied by a nonnull value
+  * Postcondition 
+  *  integer is always returned
+  *  object always exists
+  */
+  public int getPoints(){return points;}
+  /** Returns the value of name of the object its called on
+    * @return String name: value of name
+    * @see Player
+    * 
+    * Precondition:
+    *  name is occupied by a nonnull value
+    * Postcondition 
+    *  string is always returned
+    *  object always exists
+    */
+  public String getName(){return name;}
   public void setPoints(int i){/*not yet implemented*/}
   public void setName(String s){/*not yet implemented*/}
   /* your code here - accessor(s) */ 

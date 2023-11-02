@@ -1,4 +1,4 @@
-
+ 
 import java.util.Scanner;
 import java.io.File;
 /** Board, represents a game board handling a hangman type game, uses various methods to allow a user to guess attempt to solve a provided phrase
@@ -160,7 +160,27 @@ public class  Board
     solvedPhrase = newSolvedPhrase;
     return foundLetter;
   } 
-  public String getPhrase(){/*not yet implemented*/ return "";}
-  public int getLetterVal(){/*not yet implemented*/ return 0;}
+  /** Returns the value of phrase of the object its called on
+    * @return String phrase: value of phrase
+    * @see Player
+    * 
+    * Precondition:
+    *  phrase is occupied by a nonnull value
+    * Postcondition 
+    *  string is always returned
+    *  object always exists
+    */
+  public String getPhrase(){return phrase;}
+  /** Returns the value of currentLetterValue of the object its called on
+    * @return int currentLetterValue: value of currentLetterValue
+    * @see Player
+    * 
+    * Precondition:
+    *  currentLetterValue is occupied by a nonnull value
+    * Postcondition 
+    *  integer is always returned
+    *  object always exists
+    */
+  public int getLetterVal(){return currentLetterValue;}
   public void solve(String s){/*not yet implemented*/}
 } 
