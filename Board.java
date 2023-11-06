@@ -21,7 +21,7 @@ public class  Board
     solvedPhrase = "";
     phrase = loadPhrase();
     setLetterValue();
-    System.out.println("Phrase: " + phrase); //temp test code
+    //System.out.println("Phrase: " + phrase); //temp test code
   }
   /* your code here - accessor(s) */
   
@@ -160,6 +160,7 @@ public class  Board
     solvedPhrase = newSolvedPhrase;
     return foundLetter;
   } 
+  public String getSolvedPhrase(){return solvedPhrase;}
   /** Returns the value of phrase of the object its called on
     * @return String phrase: value of phrase
     * @see Player
@@ -182,5 +183,4 @@ public class  Board
     *  object always exists
     */
   public int getLetterVal(){return currentLetterValue;}
-  public void solve(String s){/*not yet implemented*/}
 } 

@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-/** Player class, represents one player of the hangman game, provides an interface with said player's points and name
+/** Player class, represents one player of the hangman game, provides an interface with said player's score and name
  * @author Peyton Leonard, PLTW
  * @version 1.1
  * @date 10/30/23
@@ -30,17 +30,17 @@ public class Player
     score = 0;
     System.out.println("Hello and welcome to the game, " + name);
   }
-  /** Returns the value of points of the object its called on
-  * @return int points: value of points
+  /** Returns the value of score of the object its called on
+  * @return int score: value of score
   * @see Player
   * 
   * Precondition:
-  *  points is occupied by a nonnull value
+  *  score is occupied by a nonnull value
   * Postcondition 
   *  integer is always returned
   *  object always exists
   */
-  public int getPoints(){return points;}
+  public int getScore(){return score;}
   /** Returns the value of name of the object its called on
     * @return String name: value of name
     * @see Player
@@ -52,8 +52,8 @@ public class Player
     *  object always exists
     */
   public String getName(){return name;}
-  public void setPoints(int i){/*not yet implemented*/}
-  public void setName(String s){/*not yet implemented*/}
+  public void setScore(int i){score = i;}
+  public void setName(String s){name = s;}
   /* your code here - accessor(s) */ 
 
   /* your code here - mutator(s) */ 
